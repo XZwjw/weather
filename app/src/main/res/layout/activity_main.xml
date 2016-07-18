@@ -1,0 +1,298 @@
+<android.support.v4.widget.SwipeRefreshLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/weather"
+    tools:context=".MainActivity"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height = "match_parent"
+        >
+        <ScrollView
+            android:id="@+id/scrollViewID"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/refreshtextViewID"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="10dp"
+                android:gravity="center"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                />
+        </ScrollView>
+
+        <LinearLayout
+            android:id="@+id/citynmLayoutID"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:layout_below="@id/scrollViewID"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/citynmID"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:textSize="50dp"
+                />
+            <Button
+                android:id="@+id/sousuoID"
+                android:layout_width="40dp"
+                android:layout_height="50dp"
+                android:background="@drawable/sousuo"
+
+                />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/temperatureLayoutID"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/citynmLayoutID"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            >
+
+            <TextView
+                android:id="@+id/temperature_currID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="120dp"
+                android:layout_gravity="center"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="O"
+                android:textSize="30dp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="[现在]"
+                android:layout_gravity="bottom"
+                />
+        </LinearLayout>
+
+
+        <TableLayout
+            android:id="@+id/todayLayoutID"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/temperatureLayoutID"
+            android:paddingLeft="40dp"
+            android:paddingRight="40dp"
+            >
+
+            <TableRow>
+
+                <ImageView
+                    android:id="@+id/weather_iconID"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_weight="1"
+                    />
+                <TextView
+                    android:id="@+id/weatherID"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    />
+                <TextView
+                    android:id="@+id/temperatureID"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    />
+
+            </TableRow>
+
+
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/winpID"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    />
+
+                <TextView
+                    android:id="@+id/windID"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    />
+                <TextView
+                    android:id="@+id/aqi_remark"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    />
+
+            </TableRow>
+
+        </TableLayout>
+
+        <TextView
+            android:id="@+id/futureID"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="未来天气"
+            android:layout_below="@id/todayLayoutID"
+            android:paddingLeft="20dp"
+            />
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/futureID"
+            android:paddingLeft="40dp"
+            android:paddingRight="40dp"
+            android:paddingTop="60dp"
+            android:layout_alignParentBottom="true">
+            <TableRow>
+
+                <ImageView
+                    android:id="@+id/weather_icon1ID"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_weight="1"
+                    />
+                <TextView
+                    android:id="@+id/week1ID"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    />
+                <TextView
+                    android:id="@+id/temperature1ID"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"/>
+
+            </TableRow>
+
+            <TableRow>
+
+                <ImageView
+                    android:id="@+id/weather_icon2ID"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_weight="1"
+                    />
+                <TextView
+                    android:id="@+id/week2ID"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    />
+                <TextView
+                    android:id="@+id/temperature2ID"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"/>
+
+            </TableRow>
+
+            <TableRow>
+
+                <ImageView
+                    android:id="@+id/weather_icon3ID"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_weight="1"
+                    />
+                <TextView
+                    android:id="@+id/week3ID"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    />
+                <TextView
+                    android:id="@+id/temperature3ID"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"/>
+
+            </TableRow>
+
+            <TableRow>
+                <ImageView
+                    android:id="@+id/weather_icon4ID"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_weight="1"
+                    />
+                <TextView
+                    android:id="@+id/week4ID"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    />
+                <TextView
+                    android:id="@+id/temperature4ID"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"/>
+
+            </TableRow>
+
+            <TableRow>
+                <ImageView
+                    android:id="@+id/weather_icon5ID"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_weight="1"
+                    />
+                <TextView
+                    android:id="@+id/week5ID"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    />
+                <TextView
+                    android:id="@+id/temperature5ID"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"/>
+
+            </TableRow>
+
+            <TableRow>
+                <ImageView
+                    android:id="@+id/weather_icon6ID"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_weight="1"
+                    />
+                <TextView
+                    android:id="@+id/week6ID"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    />
+                <TextView
+                    android:id="@+id/temperature6ID"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"/>
+
+            </TableRow>
+
+        </TableLayout>
+
+
+    </RelativeLayout>
+
+
+
+
+</android.support.v4.widget.SwipeRefreshLayout>
